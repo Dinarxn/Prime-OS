@@ -22,18 +22,23 @@ export function DesktopSidebar() {
     >
       <div className="flex flex-col gap-6">
         {/* Brand header */}
-        <div className="flex items-center gap-3 px-2 py-1">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
-            <Zap className="h-5 w-5" />
-          </div>
-          <div>
-            <div className="text-sm font-bold tracking-wider text-zinc-100">
-              PRIME<span className="text-emerald-400">OS</span>
+        <div className="flex items-center justify-between px-2 py-1">
+          <div className="flex items-center gap-3">
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+              <Zap className="h-5 w-5" />
             </div>
-            <div className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
-              Client Acquisition
+            <div>
+              <div className="text-sm font-bold tracking-wider text-zinc-100">
+                PRIME<span className="text-emerald-400">OS</span>
+              </div>
+              <div className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider">
+                Client Acquisition
+              </div>
             </div>
           </div>
+          <span className="rounded-md border border-zinc-800 bg-zinc-900/80 px-1.5 py-0.5 text-[10px] font-mono text-zinc-400">
+            v0.2
+          </span>
         </div>
 
         {/* Navigation links */}
@@ -51,9 +56,9 @@ export function DesktopSidebar() {
                 href={item.href}
                 aria-current={isActive ? "page" : undefined}
                 className={cn(
-                  "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500",
+                  "relative flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500",
                   isActive
-                    ? "bg-zinc-900 text-zinc-100 border border-zinc-700/80 shadow-sm"
+                    ? "bg-zinc-900 text-zinc-100 border border-zinc-700/80 shadow-sm before:absolute before:left-0 before:top-2 before:bottom-2 before:w-1 before:rounded-r before:bg-emerald-400"
                     : "text-zinc-400 hover:bg-zinc-900/50 hover:text-zinc-200"
                 )}
               >
@@ -72,16 +77,21 @@ export function DesktopSidebar() {
 
       {/* Workspace Footer */}
       <div className="rounded-xl border border-zinc-800/80 bg-zinc-900/60 p-3">
-        <div className="flex items-center gap-2.5">
-          <div className="flex h-7 w-7 items-center justify-center rounded-md bg-zinc-800 text-zinc-300">
-            <Building2 className="h-4 w-4" />
-          </div>
-          <div className="min-w-0 flex-1">
-            <div className="truncate text-xs font-semibold text-zinc-200">
-              Default Agency
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2.5 min-w-0">
+            <div className="flex h-7 w-7 items-center justify-center rounded-md bg-zinc-800 text-zinc-300">
+              <Building2 className="h-4 w-4" />
             </div>
-            <div className="text-[10px] text-zinc-500">Free Workspace</div>
+            <div className="min-w-0 flex-1">
+              <div className="truncate text-xs font-semibold text-zinc-200">
+                Default Agency
+              </div>
+              <div className="text-[10px] text-zinc-500">Free Workspace</div>
+            </div>
           </div>
+          <span className="rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2 py-0.5 text-[10px] font-semibold text-emerald-400">
+            Owner
+          </span>
         </div>
       </div>
     </aside>
